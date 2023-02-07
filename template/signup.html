@@ -1,0 +1,53 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<title>Signup</title>
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="container mt-5">
+    <h1>Signup</h1>
+    <div class="form-group mt-3">
+
+        <label for="">Username</label>
+        <input
+      type="text"
+      name="username"
+      class="form-control"
+      placeholder="Enter Your Name"
+      /><br />
+    <label for="">Email</label>
+
+    <input
+      type="email"
+      name="email"
+      class="form-control"
+      placeholder="Enter Your Email"
+    /><br />
+    <label for="">Password</label>
+
+    <input
+      type="password"
+      name="password"
+      class="form-control"
+      placeholder="Create Your Password"
+      /><br />
+      <label for="">Confirm Password</label>
+      
+    <input
+    type="password"
+      name="password2"
+      class="form-control"
+      placeholder="Confirm Your Password"
+      /><br />
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+</div>
+</form>
+{% if messages %}
+{% for msg in messages  %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endfor %}
+{% endif %}
+{% endblock %}

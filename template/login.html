@@ -1,0 +1,25 @@
+{% include 'base.html' %}
+{% block content %}
+<title>Login</title>
+<form action="" method="post" enctype="multipart/form-data" required>
+{% csrf_token %}
+<div class="container mt-5">
+    <h1>Login</h1>
+<div class="form-group mt-3">
+<label for="">Username</label>
+    <input type="text" name="username" class="form-control"  placeholder="Enter Your Password"><br>
+<label for="">Password</label>
+
+    <input type="password" name="password"  class="form-control" placeholder="Enetr Your password"> <br>
+    <button type="submit" class="btn btn-primary">Login</button>
+</div>
+</div>
+</form>
+{% if messages %}
+{% for msg in messages  %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endfor %}
+{% endif %}
+{% endblock %}

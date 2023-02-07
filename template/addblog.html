@@ -1,0 +1,24 @@
+{% include 'base.html' %}
+{% block content %}
+<title>
+    Add Blogs
+</title>
+{% load crispy_forms_tags %}
+<style>
+    .container{
+        padding: 1px 100px 100px 100px;
+    }
+</style>
+
+<div class="container">
+    <h1>Add Your Blog</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.media}}
+        {{form|crispy}}
+        <br>
+        <button type="submit" class="btn btn-secondary">Add Blog</button>
+    </form>
+</div>
+
+{% endblock %}
